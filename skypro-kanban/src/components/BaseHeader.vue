@@ -12,8 +12,8 @@
           <button class="header__btn-main-new _hover01" id="btnMainNew">
             <a href="#popNewCard">Создать новую задачу</a>
           </button>
-          <a href="#user-set-target" class="header__user _hover02">Ivan Ivanov</a>
-          <div class="header__pop-user-set pop-user-set" id="user-set-target">
+          <a href="#" class="header__user _hover02" @click.prevent="toggleUserMenu">Ivan Ivanov</a>
+          <div class="header__pop-user-set pop-user-set" :style="{ display: isUserMenuVisible ? 'block' : 'none' }">
             <p class="pop-user-set__name">Ivan Ivanov</p>
             <p class="pop-user-set__mail">ivan.ivanov@gmail.com</p>
             <div class="pop-user-set__theme">
@@ -27,3 +27,29 @@
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isUserMenuVisible: false
+    }
+  },
+  methods: {
+    toggleUserMenu() {
+      this.isUserMenuVisible = !this.isUserMenuVisible;
+    },
+    closeUserMenuOnClickOutside(event) {
+      if (!this.$el.contains(event.target) && this.isUserMenuVisible) {
+        this.isUserMenuVisible = false;
+      }
+    }
+  },
+  mounted() {
+    document.addEventListener('click', this.closeUserMenuOnClickOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.closeUserMenuOnClickOutside);
+  }
+}
+</script>
