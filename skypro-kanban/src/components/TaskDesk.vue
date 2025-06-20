@@ -1,36 +1,65 @@
 <template>
-  <div class="main__block">
-    <div class="main__content">
-      <TaskColumn
-        status="Без статуса"
-        :tasks="[{theme: 'orange', title: 'Название задачи', date: '30.10.23'}]"
-      />
-      <TaskColumn
-        status="Нужно сделать"
-        :tasks="[{theme: 'green', title: 'Название задачи', date: '30.10.23'}]"
-      />
-      <TaskColumn
-        status="В работе"
-        :tasks="[{theme: 'purple', title: 'Название задачи', date: '30.10.23'}]"
-      />
-      <TaskColumn
-        status="Тестирование"
-        :tasks="[{theme: 'green', title: 'Название задачи', date: '30.10.23'}]"
-      />
-      <TaskColumn
-        status="Готово"
-        :tasks="[{theme: 'green', title: 'Название задачи', date: '30.10.23'}]"
-      />
+  <main class="main">
+    <div class="container">
+      <div class="main__block">
+        <div class="main__content">
+          <div v-if="loading" class="loading-message">Данные загружаются...</div>
+          <template v-else>
+            <TaskColumn
+              v-for="column in columns"
+              :key="column.status"
+              :status="column.status"
+              :tasks="getTasksByStatus(column.status)"
+            />
+          </template>
+        </div>
+      </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
 import TaskColumn from './TaskColumn.vue';
+import { tasks } from './mocks/tasks.js';
 
 export default {
   components: {
     TaskColumn
+  },
+  data() {
+    return {
+      loading: true,
+      tasks: [],
+      columns: [
+        { status: 'Без статуса' },
+        { status: 'Нужно сделать' },
+        { status: 'В работе' },
+        { status: 'Тестирование' },
+        { status: 'Готово' }
+      ]
+    };
+  },
+  methods: {
+    getTasksByStatus(status) {
+      return this.tasks.filter(task => task.status === status);
+    },
+    loadTasks() {
+      setTimeout(() => {
+        this.tasks = tasks;
+        this.loading = false;
+      }, 1000);
+    }
+  },
+  created() {
+    this.loadTasks();
   }
-}
+};
 </script>
+
+<style>
+.loading-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+</style>
