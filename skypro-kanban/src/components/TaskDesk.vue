@@ -55,11 +55,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.loading-message {
-  text-align: center;
-  padding: 20px;
-  font-size: 18px;
-}
-</style>
