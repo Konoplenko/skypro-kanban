@@ -836,7 +836,7 @@ body {
   display: block;
   position: relative;
 }
-.cards__item {
+/* .cards__item {
   padding: 5px;
   animation-name: card-animation;
   animation-duration: 500ms;
@@ -915,7 +915,7 @@ body {
   line-height: 13px;
   color: #94a6be;
   letter-spacing: 0.2px;
-}
+} */
 
 @media screen and (max-width: 1200px) {
   .main__block {
@@ -936,7 +936,7 @@ body {
     display: flex;
     overflow-y: auto;
   }
-  .cards__card {
+  /* .cards__card {
     width: 220px;
     height: 130px;
     background-color: #ffffff;
@@ -946,7 +946,7 @@ body {
     align-items: flex-start;
     justify-content: stretch;
     padding: 15px 13px 19px;
-  }
+  } */
 }
 @media screen and (max-width: 660px) {
   /* .pop-new-card {
