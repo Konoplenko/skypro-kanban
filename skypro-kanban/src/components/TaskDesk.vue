@@ -57,11 +57,6 @@ export default {
 </script>
 
 <style scoped>
-.main {
-  width: 100%;
-  background-color: #EAEEF6;
-}
-
 .main__block {
   width: 100%;
   margin: 0 auto;
