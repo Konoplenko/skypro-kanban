@@ -278,7 +278,7 @@ body {
   color: #565eef;
 } */
 
-.pop-new-card {
+/* .pop-new-card {
   display: none;
   width: 100%;
   min-width: 375px;
@@ -342,9 +342,9 @@ body {
   width: 100%;
   display: block;
   margin-bottom: 20px;
-}
+} */
 
-.form-new__block {
+/* .form-new__block {
   display: flex;
   flex-direction: column;
 }
@@ -396,7 +396,7 @@ body {
   line-height: 1;
   color: #ffffff;
   float: right;
-}
+} */
 
 .subttl {
   color: #000;
@@ -516,7 +516,7 @@ body {
   font-weight: 700;
 } */
 
-.categories {
+/* .categories {
   margin-bottom: 20px;
 }
 .categories__themes {
@@ -542,7 +542,7 @@ body {
   font-weight: 600;
   line-height: 14px;
   white-space: nowrap;
-}
+} */
 
 .pop-browse {
   display: none;
@@ -949,7 +949,7 @@ body {
   }
 }
 @media screen and (max-width: 660px) {
-  .pop-new-card {
+  /* .pop-new-card {
     top: 70px;
   }
   .pop-new-card__container {
@@ -961,7 +961,7 @@ body {
   }
   .pop-new-card__wrap {
     display: block;
-  }
+  } */
   /* .calendar {
     max-width: 340px;
     width: 100%;
@@ -1023,7 +1023,7 @@ body {
     border-radius: 4px;
     margin-right: 0;
   } */
-  .pop-new-card__container {
+  /* .pop-new-card__container {
     padding: 0;
     justify-content: flex-start;
   }
@@ -1038,14 +1038,14 @@ body {
   /* .pop-new-card__calendar {
     width: 100%;
   } */
-  .form-new__area {
+  /* .form-new__area {
     max-width: 100%;
     height: 34px;
   }
   .form-new__create {
     width: 100%;
     height: 40px;
-  }
+  } */ */
   .pop-browse__block {
     padding: 20px 16px 32px;
   }
