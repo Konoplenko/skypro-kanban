@@ -55,3 +55,48 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.main {
+  width: 100%;
+  background-color: #EAEEF6;
+}
+
+.main__block {
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px 0 49px;
+}
+
+.main__content {
+  width: 100%;
+  display: flex;
+}
+
+.loading-message {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  color: #94A6BE;
+}
+
+@media screen and (max-width: 1200px) {
+  .main__block {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0 64px;
+  }
+
+  .main__content {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+</style>
