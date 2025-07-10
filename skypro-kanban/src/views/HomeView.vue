@@ -3,7 +3,6 @@
     <ExitModal />
     <NewCardModal />
     <TaskModal />
-
     <BaseHeader />
     <main class="main">
       <div class="container">
