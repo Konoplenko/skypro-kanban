@@ -4,13 +4,18 @@
       <p>{{ status }}</p>
     </div>
     <div class="cards">
-      <TaskCard
-        v-for="task in tasks"
-        :key="task.id"
-        :title="task.title"
-        :theme="getThemeClass(task.topic)"
-        :date="formatDate(task.date)"
-      />
+      <template v-if="tasks.length > 0">
+        <TaskCard
+          v-for="task in tasks"
+          :key="task.id"
+          :title="task.title"
+          :theme="getThemeClass(task.topic)"
+          :date="formatDate(task.date)"
+        />
+      </template>
+      <div v-else class="empty-column">
+        <p>Нет задач</p>
+      </div>
     </div>
   </div>
 </template>
@@ -74,6 +79,14 @@ export default {
   width: 100%;
   display: block;
   position: relative;
+  min-height: 100px;
+}
+
+.empty-column {
+  text-align: center;
+  padding: 20px;
+  color: #94a6be;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -87,6 +100,7 @@ export default {
     width: 100%;
     display: flex;
     overflow-y: auto;
+    min-height: 150px;
   }
 }
 </style>
