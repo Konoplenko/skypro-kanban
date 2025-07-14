@@ -273,6 +273,15 @@ import BaseCalendar from './BaseCalendar.vue'
   color: #FFFFFF;
 }
 
+._hide {
+  display: none;
+}
+
+._dark {
+  display: none;
+}
+
+
 @media screen and (max-width: 660px) {
   .pop-browse {
     top: 70px;
