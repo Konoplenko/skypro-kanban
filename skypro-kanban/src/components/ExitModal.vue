@@ -1,24 +1,48 @@
 <template>
-			<div class="pop-exit" id="popExit">
-				<div class="pop-exit__container">
-					<div class="pop-exit__block">
-						<div class="pop-exit__ttl">
-							<h2>Выйти из аккаунта?</h2>
-						</div>
-						<form class="pop-exit__form" id="formExit" action="#">
-							<div class="pop-exit__form-group">
-								<button class="pop-exit__exit-yes _hover01" id="exitYes"><a href="modal/signin.html">Да, выйти</a> </button>
-								<button class="pop-exit__exit-no _hover03" id="exitNo"><a href="main.html">Нет, остаться</a> </button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+  <div class="pop-exit" id="popExit" v-if="showModal">
+    <div class="pop-exit__container">
+      <div class="pop-exit__wrapper">
+        <div class="pop-exit__ttl">
+          <h2>Выйти из аккаунта?</h2>
+        </div>
+        <div class="pop-exit__form">
+          <button class="pop-exit__exit-yes _hover01" @click="handleLogout">Да, выйти</button>
+          <button class="pop-exit__exit-no _hover03" @click="closeModal">Нет, остаться</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
 export default {
-  name: 'ExitModal'
+  setup() {
+    const showModal = ref(false)
+    const router = useRouter()
+
+    const handleLogout = () => {
+      localStorage.removeItem('userInfo')
+      router.push('/login')
+    }
+
+    const closeModal = () => {
+      showModal.value = false
+    }
+
+    const openModal = () => {
+      showModal.value = true
+    }
+
+    return {
+      showModal,
+      handleLogout,
+      closeModal,
+      openModal
+    }
+  }
 }
 </script>
 

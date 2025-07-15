@@ -1,3 +1,4 @@
+<!-- views/HomeView.vue -->
 <template>
   <div class="wrapper">
     <ExitModal />
@@ -13,11 +14,13 @@
 </template>
 
 <script>
-import BaseHeader from '@/components/BaseHeader.vue';
-import TaskDesk from '@/components/TaskDesk.vue';
-import ExitModal from '@/components/ExitModal.vue';
-import NewCardModal from '@/components/NewCardModal.vue';
-import TaskModal from '@/components/TaskModal.vue';
+import BaseHeader from '@/components/BaseHeader.vue'
+import TaskDesk from '@/components/TaskDesk.vue'
+import ExitModal from '@/components/ExitModal.vue'
+import NewCardModal from '@/components/NewCardModal.vue'
+import TaskModal from '@/components/TaskModal.vue'
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default {
   components: {
@@ -26,6 +29,16 @@ export default {
     ExitModal,
     NewCardModal,
     TaskModal
+  },
+  setup() {
+    const router = useRouter()
+
+    onMounted(() => {
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+      if (!userInfo) {
+        router.push('/login')
+      }
+    })
   }
 }
 </script>
