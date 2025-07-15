@@ -127,6 +127,22 @@ import BaseCalendar from './BaseCalendar.vue'
   opacity: 1;
 }
 
+.categories__theme {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  padding: 8px 20px;
+  border-radius: 24px;
+  margin-right: 7px;
+  opacity: 0.4;
+}
+.categories__theme p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
 .pop-browse__content .theme-down {
   display: none;
   margin-bottom: 20px;
