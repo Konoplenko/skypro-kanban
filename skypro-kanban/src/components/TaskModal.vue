@@ -199,6 +199,10 @@ import BaseCalendar from './BaseCalendar.vue'
   margin-right: 8px;
 }
 
+._hide {
+  display: none;
+}
+
 .form-browse__block {
   display: flex;
   flex-direction: column;

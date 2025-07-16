@@ -1,4 +1,3 @@
-<!-- views/HomeView.vue -->
 <template>
   <div class="wrapper">
     <ExitModal />
